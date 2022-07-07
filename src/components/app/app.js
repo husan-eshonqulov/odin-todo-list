@@ -1,4 +1,4 @@
-import createTitle from "./title";
+import createTitle from "../title/title";
 
 function createApp() {
     const content = document.querySelector('#content');
