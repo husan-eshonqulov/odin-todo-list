@@ -1,5 +1,7 @@
+import createElement from "../element/element";
+
 function createInput(type, placeholder) {
-    const input = document.createElement('input');
+    const input = createElement('input');
     input.type = type;
     input.placeholder = placeholder;
     input.classList.add('form-control');
