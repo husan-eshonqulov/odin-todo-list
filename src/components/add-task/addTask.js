@@ -1,21 +1,18 @@
 import './addTask.css';
+import createInput from '../input/input';
+import createElement from '../element/element';
+import createButton from '../button/button';
 
 function createAddTask() {
-    const outerForm = document.createElement('div');
-    const innerForm = document.createElement('div');
-    const taskInput = document.createElement('input');
-    const addButton = document.createElement('button');
+    const outerForm = createElement('div');
+    const innerForm = createElement('div');
+    const taskInput = createInput('text', 'Task');
+    const addButton = createButton('Add');
 
-    outerForm.id = 'outerForm';
-    innerForm.id = 'innerForm';
-    taskInput.id = 'taskInput';
-    addButton.id = 'addButton';
-
-    taskInput.type = 'text';
-    taskInput.placeholder = 'Task';
-    taskInput.classList.add('form-control');
-    addButton.classList.add('btn');
-    addButton.textContent = 'Add';
+    outerForm.classList.add('outerForm');
+    innerForm.classList.add('innerForm');
+    taskInput.classList.add('taskInput');
+    addButton.classList.add('addButton');
 
     innerForm.appendChild(taskInput);
     innerForm.appendChild(addButton);

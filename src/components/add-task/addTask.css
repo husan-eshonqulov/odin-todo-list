@@ -1,22 +1,19 @@
-#outerForm {
+.outerForm {
     background-color: #eee;
     border-radius: 10px;
     padding: 24px;
 }
 
-#innerForm {
+.innerForm {
     margin: auto;
 }
 
-#taskInput {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+.taskInput {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
 }
 
-#addButton {
-    width: 100%;
-    color: #fff;
-    background-color: #2f79b9;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+.addButton {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
 }
