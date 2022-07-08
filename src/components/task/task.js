@@ -3,14 +3,14 @@ import createCrossBtn from "../crossBtn/crossBtn";
 import createElement from "../element/element";
 import './task.css';
 
-function createTask(text) {
+function createTask(task) {
     const outerTask = createElement('div');
     const innerLeftTask = createElement('div');
     const innerRightTask = createElement('div');
     const checkBtn = createCheckBtn();
     const crossBtn = createCrossBtn();
 
-    innerLeftTask.textContent = text;
+    innerLeftTask.textContent = task.task;
 
     outerTask.classList.add('outerTask');
     innerLeftTask.classList.add('innerLeftTask');
