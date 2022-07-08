@@ -1,0 +1,13 @@
+.outerTask {
+    color: rgb(58, 119, 58);
+    background-color: rgb(223, 240, 215);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.innerLeftTask {
+    font-size: 21px;
+    font-weight: 500;
+}
