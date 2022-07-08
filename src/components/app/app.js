@@ -3,6 +3,7 @@ import createAddTask from "../add-task/addTask";
 import createHeading from "../heading/heading";
 import createElement from "../element/element";
 import createTask from "../task/task";
+import './app.css';
 
 function createApp() {
     const root = document.querySelector('#root');
@@ -12,6 +13,10 @@ function createApp() {
     const heading = createHeading('Tasks', 'h2');
     const hr = createElement('hr');
     const task = createTask('task1');
+    
+    root.classList.add('container');
+    title.classList.add('title');
+    addTask.classList.add('addTask');
 
     root.appendChild(title);
     root.appendChild(addTask);
