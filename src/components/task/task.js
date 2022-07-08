@@ -15,6 +15,8 @@ function createTask(text) {
     outerTask.classList.add('outerTask');
     innerLeftTask.classList.add('innerLeftTask');
     innerRightTask.classList.add('innerRightTask');
+    checkBtn.classList.add('checkTaskBtn');
+    crossBtn.classList.add('crossTaskBtn');
 
     innerRightTask.appendChild(checkBtn);
     innerRightTask.appendChild(crossBtn);

@@ -11,3 +11,13 @@
     font-size: 21px;
     font-weight: 500;
 }
+
+.checkTaskBtn {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.crossTaskBtn {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
