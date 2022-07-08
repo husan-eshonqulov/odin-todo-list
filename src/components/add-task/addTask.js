@@ -1,7 +1,7 @@
 import './addTask.css';
 import createInput from '../input/input';
 import createElement from '../element/element';
-import createButton from '../button/button';
+import createButton from '../primaryBtn/primaryBtn';
 
 function createAddTask() {
     const outerForm = createElement('div');
