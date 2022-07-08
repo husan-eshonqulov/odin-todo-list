@@ -1,4 +1,4 @@
-import './button.css';
+import './primaryBtn.css';
 import createElement from '../element/element';
 
 function createButton(text) {
