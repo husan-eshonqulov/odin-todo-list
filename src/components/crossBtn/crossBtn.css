@@ -3,3 +3,7 @@
     color: #fff !important;
     padding: 6px 14px !important;
 }
+
+.crossBtn:hover {
+    background-color: #ac1f2d !important;
+}
