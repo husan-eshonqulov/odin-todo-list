@@ -2,7 +2,7 @@ import createElement from "../element/element";
 import createTask from "../task/task";
 import './tasks.css';
 
-function createTasks(taskList) {
+export function createTasks(taskList) {
     const tasks = createElement('div');
 
     taskList.forEach(task => tasks.appendChild(createTask(task)));
@@ -12,4 +12,8 @@ function createTasks(taskList) {
     return tasks;
 }
 
-export default createTasks;
+export function updateTasks(taskList) {
+    const outerTasks = document.querySelector('.outerTasks');
+    outerTasks.textContent = '';
+    outerTasks.appendChild(createElement(taskList));
+}

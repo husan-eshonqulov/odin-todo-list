@@ -2,10 +2,9 @@ import createTitle from "../title/title";
 import createAddTask from "../add-task/addTask";
 import createHeading from "../heading/heading";
 import createElement from "../element/element";
-import createTask from "../task/task";
 import taskList from '../../database/database';
 import './app.css';
-import createTasks from "../tasks/tasks";
+import { createTasks } from "../tasks/tasks";
 
 function createApp() {
     const root = document.querySelector('#root');
@@ -14,17 +13,19 @@ function createApp() {
     const addTask = createAddTask();
     const heading = createHeading('Tasks', 'h2');
     const hr = createElement('hr');
-    const tasks = createTasks(taskList);
+    const outerTasks = createElement('div');
 
     root.classList.add('container');
     title.classList.add('title');
     addTask.classList.add('addTask');
+    outerTasks.classList.add('outerTasks');
 
+    outerTasks.appendChild(createTasks(taskList));
     root.appendChild(title);
     root.appendChild(addTask);
     root.appendChild(heading);
     root.appendChild(hr);
-    root.appendChild(tasks);
+    root.appendChild(outerTasks);
 }
 
 export default createApp;
