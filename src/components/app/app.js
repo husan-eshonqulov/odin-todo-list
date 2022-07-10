@@ -2,7 +2,7 @@ import createTitle from "../title/title";
 import createAddTask from "../add-task/addTask";
 import createHeading from "../heading/heading";
 import createElement from "../element/element";
-import taskList from '../../database/database';
+import { taskList } from '../../database/database';
 import './app.css';
 import { createTasks } from "../tasks/tasks";
 
