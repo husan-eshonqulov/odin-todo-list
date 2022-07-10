@@ -7,7 +7,7 @@ export function createTasks(taskList) {
 
     taskList.forEach(task => tasks.appendChild(createTask(task)));
 
-    tasks.classList.add('tasks');
+    if (taskList.length) tasks.classList.add('tasks');
 
     return tasks;
 }

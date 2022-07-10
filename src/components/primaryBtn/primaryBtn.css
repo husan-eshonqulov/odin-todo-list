@@ -3,3 +3,7 @@
     color: #fff !important;
     background-color: #2f79b9 !important;
 }
+
+.primaryBtn:hover {
+    background-color: #4a96da !important;
+}
