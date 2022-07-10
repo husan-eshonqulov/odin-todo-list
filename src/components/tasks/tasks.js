@@ -15,5 +15,5 @@ export function createTasks(taskList) {
 export function updateTasks(taskList) {
     const outerTasks = document.querySelector('.outerTasks');
     outerTasks.textContent = '';
-    outerTasks.appendChild(createElement(taskList));
+    outerTasks.appendChild(createTasks(taskList));
 }

@@ -2,6 +2,7 @@ import './addTask.css';
 import createInput from '../input/input';
 import createElement from '../element/element';
 import createButton from '../primaryBtn/primaryBtn';
+import { addTaskToDB } from '../../helper';
 
 function createAddTask() {
     const outerForm = createElement('div');
@@ -13,6 +14,8 @@ function createAddTask() {
     innerForm.classList.add('innerForm');
     taskInput.classList.add('taskInput');
     addButton.classList.add('addButton');
+
+    addButton.addEventListener('click', () => addTaskToDB(taskInput.value));
 
     innerForm.appendChild(taskInput);
     innerForm.appendChild(addButton);
