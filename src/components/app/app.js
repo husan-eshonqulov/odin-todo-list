@@ -2,30 +2,34 @@ import createTitle from "../title/title";
 import createAddTask from "../add-task/addTask";
 import createHeading from "../heading/heading";
 import createElement from "../element/element";
-import { taskList } from '../../database/database';
 import './app.css';
 import { createTasks } from "../tasks/tasks";
 
-function createApp() {
-    const root = document.querySelector('#root');
+export function createApp(taskList) {
+    const app = createElement('div');
 
     const title = createTitle('ToDo');
     const addTask = createAddTask();
     const heading = createHeading('Tasks', 'h2');
     const hr = createElement('hr');
-    const outerTasks = createElement('div');
+    const tasksBox = createElement('div');
 
-    root.classList.add('container');
     title.classList.add('title');
     addTask.classList.add('addTask');
-    outerTasks.classList.add('outerTasks');
 
-    outerTasks.appendChild(createTasks(taskList));
-    root.appendChild(title);
-    root.appendChild(addTask);
-    root.appendChild(heading);
-    root.appendChild(hr);
-    root.appendChild(outerTasks);
+    tasksBox.appendChild(createTasks(taskList));
+    app.appendChild(title);
+    app.appendChild(addTask);
+    app.appendChild(heading);
+    app.appendChild(hr);
+    app.appendChild(tasksBox);
+
+    return app;
 }
 
-export default createApp;
+export function loadApp(taskList) {
+    const root = document.querySelector('#root');
+    root.textContent = '';
+    root.classList.add('container');
+    root.appendChild(createApp(taskList));
+};
