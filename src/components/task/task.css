@@ -1,11 +1,11 @@
-.outerTask {
+.taskBox {
     padding: 16px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.innerLeftTask {
+.taskName {
     font-size: 21px;
     font-weight: 500;
 }

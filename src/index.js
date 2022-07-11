@@ -1,6 +1,8 @@
 import { loadApp } from "./components/app/app";
-import { taskList } from './database/database'
+import db from "./database/database";
 import 'bootstrap/dist/css/bootstrap.css';
 import './style.css';
 
-loadApp(taskList);
+const root = document.querySelector('#root');
+
+loadApp(db, root);

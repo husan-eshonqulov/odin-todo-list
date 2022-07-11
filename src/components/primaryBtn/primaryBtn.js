@@ -1,7 +1,7 @@
 import './primaryBtn.css';
 import createElement from '../element/element';
 
-function createButton(text) {
+function createPrimaryBtn(text) {
     const button = createElement('button');
     button.classList.add('btn');
     button.classList.add('primaryBtn');
@@ -10,4 +10,4 @@ function createButton(text) {
     return button;
 }
 
-export default createButton;
+export default createPrimaryBtn;

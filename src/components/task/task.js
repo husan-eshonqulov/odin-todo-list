@@ -1,34 +1,40 @@
+import './task.css';
 import createCheckBtn from "../check-btn/checkBtn";
 import createCrossBtn from "../crossBtn/crossBtn";
 import createElement from "../element/element";
-import { deleteTask, toggleStatus } from '../../helper'
-import './task.css';
+import { loadTasks } from "../tasks/tasks";
 
-function createTask(task) {
-    const outerTask = createElement('div');
-    const innerLeftTask = createElement('div');
-    const innerRightTask = createElement('div');
+function createTask(task, db, container) {
+    const taskBox = createElement('div');
+    const taskName = createElement('div');
+    const taskBtns = createElement('div');
     const checkBtn = createCheckBtn();
     const crossBtn = createCrossBtn();
 
-    innerLeftTask.textContent = task.task;
+    taskName.textContent = task.task;
 
-    outerTask.classList.add('outerTask');
-    innerLeftTask.classList.add('innerLeftTask');
-    innerRightTask.classList.add('innerRightTask');
+    taskBox.classList.add('taskBox');
+    taskName.classList.add('taskName');
     checkBtn.classList.add('checkTaskBtn');
     crossBtn.classList.add('crossTaskBtn');
-    outerTask.classList.add(task.isCompleted ? 'completed' : 'notCompleted')
+    taskBox.classList.add(task.isCompleted ? 'completed' : 'notCompleted');
 
-    checkBtn.addEventListener('click', () => toggleStatus(task.id));
-    crossBtn.addEventListener('click', () => deleteTask(task.id));
+    checkBtn.addEventListener('click', () => {
+        db.toggleTaskStatus(task.id);
+        loadTasks(db, container);
+    });
 
-    innerRightTask.appendChild(checkBtn);
-    innerRightTask.appendChild(crossBtn);
-    outerTask.appendChild(innerLeftTask);
-    outerTask.appendChild(innerRightTask);
+    crossBtn.addEventListener('click', () => {
+        db.deleteTask(task.id);
+        loadTasks(db, container);
+    });
 
-    return outerTask;
+    taskBtns.appendChild(checkBtn);
+    taskBtns.appendChild(crossBtn);
+    taskBox.appendChild(taskName);
+    taskBox.appendChild(taskBtns);
+
+    return taskBox;
 }
 
 export default createTask;
