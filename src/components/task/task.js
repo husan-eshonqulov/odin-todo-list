@@ -1,7 +1,7 @@
 import createCheckBtn from "../check-btn/checkBtn";
 import createCrossBtn from "../crossBtn/crossBtn";
 import createElement from "../element/element";
-import { deleteTask } from '../../helper'
+import { deleteTask, toggleStatus } from '../../helper'
 import './task.css';
 
 function createTask(task) {
@@ -18,7 +18,9 @@ function createTask(task) {
     innerRightTask.classList.add('innerRightTask');
     checkBtn.classList.add('checkTaskBtn');
     crossBtn.classList.add('crossTaskBtn');
+    outerTask.classList.add(task.isCompleted ? 'completed' : 'notCompleted')
 
+    checkBtn.addEventListener('click', () => toggleStatus(task.id));
     crossBtn.addEventListener('click', () => deleteTask(task.id));
 
     innerRightTask.appendChild(checkBtn);

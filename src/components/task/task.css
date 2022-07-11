@@ -1,6 +1,4 @@
 .outerTask {
-    color: rgb(58, 119, 58);
-    background-color: rgb(223, 240, 215);
     padding: 16px 24px;
     display: flex;
     justify-content: space-between;
@@ -20,4 +18,14 @@
 .crossTaskBtn {
     border-top-left-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
+}
+
+.completed {
+    color: rgb(51, 116, 147);
+    background-color: rgb(216, 237, 248);
+}
+
+.notCompleted {
+    color: rgb(58, 119, 58);
+    background-color: rgb(223, 240, 215);
 }

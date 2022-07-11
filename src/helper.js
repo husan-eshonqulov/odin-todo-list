@@ -23,3 +23,8 @@ function rearrangeIds(taskList) {
         return { ...task, id: ind }
     });
 }
+
+export function toggleStatus(id) {
+    taskList.forEach((task) => task.isCompleted = (task.id === id) ? !task.isCompleted : task.isCompleted);
+    updateTasks(taskList);
+}
